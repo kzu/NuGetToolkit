@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Apache 2.0 License
+    Clide
+    Copyright 2010 Clarius Consulting
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+    KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+ -->
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <Extern href="stdidcmd.h"/>
+  <Extern href="vsshlids.h"/>
+  <Extern href="VSDbgCmd.h" />
+  <Extern href="VsDebugGuids.h"/>
+
+  
+  <!--The Commands section is where we the commands, menus and menu groups are defined.
+      This section uses a Guid to identify the package that provides the command defined inside it. -->
+  <Commands package="guidPackage">
+    <Buttons>
+        <Button guid="guidCommandSet" id="Update" priority="0x0100">
+            <Strings>
+              <CommandName>cmdidUpdate</CommandName>
+              <ButtonText>Update</ButtonText>
+              <MenuText>Update</MenuText>
+              <ToolTipText>Update</ToolTipText>
+            </Strings>
+        </Button>
+        <Button guid="guidCommandSet" id="CheckUpdates" priority="0x0100">
+            <Strings>
+              <CommandName>cmdidCheckUpdates</CommandName>
+              <ButtonText>Check for Updates</ButtonText>
+              <MenuText>Check for Updates</MenuText>
+              <ToolTipText>Check for Updates</ToolTipText>
+            </Strings>
+        </Button>
+        <Button guid="guidCommandSet" id="Reinstall" priority="0x0100">
+            <Strings>
+              <CommandName>cmdidReinstall</CommandName>
+              <ButtonText>Reinstall</ButtonText>
+              <MenuText>Reinstall</MenuText>
+              <ToolTipText>Reinstall</ToolTipText>
+            </Strings>
+        </Button>
+        <Button guid="guidCommandSet" id="Uninstall" priority="0x0100">
+            <Strings>
+              <CommandName>cmdidUninstall</CommandName>
+              <ButtonText>Uninstall</ButtonText>
+              <MenuText>Uninstall</MenuText>
+              <ToolTipText>Uninstall</ToolTipText>
+            </Strings>
+        </Button>
+    </Buttons>
+
+
+
+  </Commands>
+
+  <CommandPlacements>
+     <CommandPlacement guid="guidCommandSet" id="Update" priority="0x0100"> 
+	         <Parent guid="guidSHLMainMenu" id="IDG_VS_CTXT_PROJWIN_FILECONTENTS_SCOPE" />
+		   </CommandPlacement> 
+	     <CommandPlacement guid="guidCommandSet" id="CheckUpdates" priority="0x0100"> 
+	         <Parent guid="guidSHLMainMenu" id="IDG_VS_CTXT_PROJWIN_SCOPE" />
+		   </CommandPlacement> 
+	     <CommandPlacement guid="guidCommandSet" id="Reinstall" priority="0x0100"> 
+	         <Parent guid="guidSHLMainMenu" id="IDG_VS_CTXT_PROJWIN_FILECONTENTS_SCOPE" />
+		   </CommandPlacement> 
+	     <CommandPlacement guid="guidCommandSet" id="Uninstall" priority="0x0100"> 
+	         <Parent guid="guidSHLMainMenu" id="IDG_VS_CTXT_PROJWIN_FILECONTENTS_SCOPE" />
+		   </CommandPlacement> 
+		</CommandPlacements>
+  
+
+  <Symbols>
+    <!-- This is the package guid. -->
+    <GuidSymbol name="guidPackage" value="{9762932e-c8af-44f0-9071-e8257b5f2730}" />
+    
+    <!-- This is the guid used to group the menu commands together -->
+    <GuidSymbol name="guidCommandSet" value="{1cfa0a04-4933-454a-a332-2348cb39cb40}">
+      <IDSymbol name="Update" value="0x0002" />
+      <IDSymbol name="CheckUpdates" value="0x0006" />
+      <IDSymbol name="Reinstall" value="0x000A" />
+      <IDSymbol name="Uninstall" value="0x000B" />
+    </GuidSymbol>
+
+</Symbols>
+
+</CommandTable>
+

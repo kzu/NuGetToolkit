@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<productState xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.2.0.0" Id="96c33866-32da-4997-a732-55dc53ad4353" xmlns="http://schemas.microsoft.com/visualstudio/patterning/runtime/productstate">
+  <products>
+    <product Id="38134725-df90-4a06-a016-fb52ad4d96f7" definitionId="c034429e-01f9-48dd-a478-0321fb708dd3" definitionName="PatternToolkit" instanceName="Toolkit" extensionId="9f6dc301-6f66-4d21-9f9c-b37412b162f6" extensionName="NuPattern Toolkit Builder" author="NuPattern" version="1.3.20.0">
+      <properties>
+        <property Id="25ef47a1-9e3c-4755-ab28-6a0862216c07" definitionId="7ce5ad5a-88c2-4336-b038-e4998aa02b03" definitionName="TransformOnBuild" rawValue="Never" />
+        <property Id="335463bb-b718-4cea-9aef-c4dc8a19068b" definitionId="293802b7-0b69-440e-be60-927f07f4e636" definitionName="PatternName" rawValue="NuGetPackage" />
+        <property Id="7c50ab10-14ee-483f-99ce-beb66b723d0a" definitionId="710634cd-4863-4314-9785-dc33f6501903" definitionName="PatternDescription" rawValue="A NuGet Package" />
+        <property Id="96130136-a123-4bc3-a68f-fb971884c3e7" definitionId="00123e2b-3459-4924-9f18-628406735664" definitionName="ExistingToolkitId" />
+        <property Id="dcfc2726-49b5-4699-9355-948ac8c5d163" definitionId="5976c04c-d8ad-433f-9794-22e9cd55ac41" definitionName="SolutionName" rawValue="Toolkit" />
+        <property Id="05a9f08d-9949-4f72-a175-f43f1bf17006" definitionId="e73753b6-45e3-479f-b953-1c9ab6836362" definitionName="ProjectRootNamespace" rawValue="ClariusLabs.NuGet.Toolkit" />
+        <property Id="865b33cd-7cf6-42e0-b6b8-4389bf0acea3" definitionId="4b4b1fdf-ea6d-4ea4-b142-c2f1685c0091" definitionName="ProjectAssemblyName" rawValue="ClariusLabs.NuGet.Toolkit" />
+        <property Id="97c51f9f-7f70-41fd-a728-7505f4849744" definitionId="4121d8f0-87a2-4757-a6d4-6f28d9fa8728" definitionName="ExcludeFromCodeCoverage" rawValue="True" />
+      </properties>
+      <references>
+        <reference Id="dff908f8-7da3-4fe5-9e70-86e9a3e2f990" value="solution://1596df55-695b-4b8a-ab47-6154b086ca9f/" kind="NuPattern.Runtime.References.SolutionArtifactLinkReference" tag="{&#xD;&#xA;  &quot;Tag&quot;: &quot;&quot;,&#xD;&#xA;  &quot;TargetFileName&quot;: null,&#xD;&#xA;  &quot;SyncNames&quot;: false,&#xD;&#xA;  &quot;Id&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;&#xD;&#xA;}" />
+        <reference Id="e8ef7067-04e6-4375-94f7-435d22cfd72b" value="Creating Pattern Toolkits" kind="NuPattern.Runtime.References.GuidanceReference" />
+      </references>
+      <views>
+        <view Id="27392d41-ab11-443b-b5ad-8481c2a49a9d" definitionId="e4f9702a-3b97-4b11-bb76-037a32de07c7" definitionName="Development">
+          <elements>
+            <element Id="c8b57432-4f51-40f4-8332-db8035ef375b" definitionId="5da53e5a-0ba8-48f8-a922-1712244c388c" definitionName="PatternModel" instanceName="Pattern Model">
+              <properties>
+                <property Id="d47529a7-3b14-4369-aafb-ed4ac438859a" definitionId="53ef780a-fc40-40dd-8c5c-34c70f7b9c90" definitionName="ValidateOnBuild" rawValue="Never" />
+                <property Id="0e799c82-f543-415e-96a2-94704dbb6112" definitionId="a3436f96-4d42-4ad4-92c4-07a16502b397" definitionName="ToolkitDefinitionFile" rawValue="D:\Code\github.com\NuGetToolkit\Toolkit\PatternModel.patterndefinition" />
+              </properties>
+              <references>
+                <reference Id="e8ed1884-a19f-4d80-81da-08d85831d2d6" value="solution://1596df55-695b-4b8a-ab47-6154b086ca9f/5dd02e06-3d01-4792-99af-c7b8ac2646bb" kind="NuPattern.Runtime.References.SolutionArtifactLinkReference" tag="{&#xD;&#xA;  &quot;Tag&quot;: &quot;&quot;,&#xD;&#xA;  &quot;TargetFileName&quot;: &quot;PatternModel.patterndefinition&quot;,&#xD;&#xA;  &quot;SyncNames&quot;: false,&#xD;&#xA;  &quot;Id&quot;: &quot;e52d1228-39f9-422d-b667-1e6f26249aa0&quot;&#xD;&#xA;}" />
+              </references>
+              <elements>
+                <collection Id="f73ab87e-d590-4167-be9f-e7bd9ea06e56" definitionId="739aef21-5f1e-421b-804a-47f11f93c9c3" definitionName="Views" instanceName="Views">
+                  <elements>
+                    <element Id="e3712a59-9a2a-4aa3-9ae1-41b9b3391567" definitionId="6a596dea-529b-4cd5-9eea-7e856a2b332c" definitionName="View" instanceName="DefaultView">
+                      <references>
+                        <reference Id="3bbc0b18-bfc2-4886-ab80-1d6e761b73e3" value="view://e0e80bd9-d562-48de-8641-a1406409c64f/" kind="NuPattern.Authoring.PatternToolkit.Automation.UriProviders.ViewArtifactLinkReference" />
+                      </references>
+                    </element>
+                  </elements>
+                </collection>
+              </elements>
+            </element>
+            <element Id="ebb695e1-7fb7-43d5-b62e-a3836b7026e2" definitionId="c00ddfa6-b949-4c7c-b8b9-f46b8e3ccf1e" definitionName="ToolkitInfo" instanceName="Toolkit Info">
+              <properties>
+                <property Id="8ddf0211-711f-4b21-83e3-fe997e1a5d2d" definitionId="c6eb8c9f-7689-405c-9e04-05b4954e3bf6" definitionName="ToolkitName" rawValue="NuGet Toolkit" />
+                <property Id="c83c33f8-22cb-4451-8492-3b520a1896ec" definitionId="09a9d6ed-39e6-414d-a8db-b7b381c227ca" definitionName="Author" rawValue="Clarius Labs" />
+                <property Id="f11d016a-304d-4828-b70f-5ef307c1974e" definitionId="f28908ca-518f-497b-9b8c-0e3dc47f21dd" definitionName="Description" rawValue="A NuPattern toolkit for creating and managing NuGet packages in a Visual Studio solution" />
+                <property Id="b4aa4350-a0eb-416b-8545-ff0bab1ad286" definitionId="2058a01f-6a09-4ad4-9e59-10393e0fca87" definitionName="Version" rawValue="1.0.0.0" />
+                <property Id="be6d3a33-7126-4524-8894-dee40a781837" definitionId="766e5ae2-80de-4d94-a0be-4b953a40ac46" definitionName="Identifier" rawValue="dea21b17-80c8-451d-ae19-0c0f05a01ecc" />
+                <property Id="75566f9e-157c-4d6a-a07d-8b029e91a5cd" definitionId="30e4ae03-67bb-4bcb-ac9d-aa71601bfe7e" definitionName="Icon" rawValue="Resources\ToolkitIcon.png" />
+                <property Id="e8eab0f6-319a-43e2-9b49-eae465b89f61" definitionId="c9e003d7-cb45-4865-a511-de29c04b5b2d" definitionName="Eula" />
+              </properties>
+              <references>
+                <reference Id="189ad4d4-14e8-4b20-9051-8a7103e273d2" value="solution://1596df55-695b-4b8a-ab47-6154b086ca9f/f2f2f1db-9659-44d4-8019-0565345ee39c" kind="NuPattern.Runtime.References.SolutionArtifactLinkReference" tag="{&#xD;&#xA;  &quot;Tag&quot;: &quot;&quot;,&#xD;&#xA;  &quot;TargetFileName&quot;: &quot;source.extension.tt&quot;,&#xD;&#xA;  &quot;SyncNames&quot;: false,&#xD;&#xA;  &quot;Id&quot;: &quot;33b932d3-2554-4e59-ba10-64d46ee6e396&quot;&#xD;&#xA;}" />
+                <reference Id="bba4ba56-400a-4e60-a52f-187c5c6017d1" value="solution://1596df55-695b-4b8a-ab47-6154b086ca9f/58002652-8c31-478b-88c0-217599678c35" kind="NuPattern.Runtime.References.SolutionArtifactLinkReference" tag="{&#xD;&#xA;  &quot;Tag&quot;: &quot;&quot;,&#xD;&#xA;  &quot;TargetFileName&quot;: &quot;source.extension.gen.ttinclude&quot;,&#xD;&#xA;  &quot;SyncNames&quot;: false,&#xD;&#xA;  &quot;Id&quot;: &quot;d321df0a-d467-45d6-944f-ccd9b82225fe&quot;&#xD;&#xA;}" />
+              </references>
+            </element>
+            <collection Id="010d5f62-bf57-4431-b97c-ba1007b86566" definitionId="58df3920-65bc-4078-b6a4-ab583f906881" definitionName="Assets" instanceName="Assets">
+              <elements>
+                <element Id="bd895ff2-edda-4214-a552-edd1b82aec6c" definitionId="c3d66aa5-3199-44ad-b7d7-f375a9ab16d3" definitionName="Guidance" instanceName="Guidance">
+                  <properties>
+                    <property Id="29b444e9-9869-4c8a-b510-26273497f5ff" definitionId="70d70df3-799d-4107-b77b-0001119484a6" definitionName="ProjectContentPath" rawValue="GeneratedCode\Guidance\Content" />
+                    <property Id="7c9d4594-8d6f-4eb9-9809-34ced149be8b" definitionId="39537f0e-76a8-409b-adb5-e54fbdbd8b27" definitionName="DocumentFilePath" rawValue="D:\Code\github.com\NuGetToolkit\Toolkit\Assets\Guidance\ToolkitGuidance.doc" />
+                    <property Id="b4d0d06d-57b0-428e-ada2-b95dbcf27824" definitionId="81c7a831-97e3-4067-9d15-8d7fb671a755" definitionName="DefaultInstanceName" rawValue="Working with Toolkit" />
+                  </properties>
+                  <references>
+                    <reference Id="dbbe8de3-f233-4d83-8b29-23a653fe18d6" value="solution://1596df55-695b-4b8a-ab47-6154b086ca9f/44d2e4ad-64ec-442c-b95d-aee1e3d41d10" kind="NuPattern.Runtime.References.SolutionArtifactLinkReference" tag="{&#xD;&#xA;  &quot;Tag&quot;: &quot;&quot;,&#xD;&#xA;  &quot;TargetFileName&quot;: &quot;ToolkitGuidance.doc&quot;,&#xD;&#xA;  &quot;SyncNames&quot;: false,&#xD;&#xA;  &quot;Id&quot;: &quot;90291e86-b780-4adf-b500-5c11c868c3fd&quot;&#xD;&#xA;}" />
+                  </references>
+                </element>
+                <collection Id="97c3857c-eea0-4b50-9466-69e955f2412c" definitionId="f53b1915-e5c9-47f0-b33f-64487813d87c" definitionName="Templates" instanceName="Templates">
+                  <elements>
+                    <collection Id="174209e8-c1a2-443f-b394-307a9a8a8af5" definitionId="48591d87-4482-4dae-b5af-3ab807bcd947" definitionName="ItemTemplates" instanceName="Item Templates" />
+                    <collection Id="9e0f6445-2997-49fb-bbce-42a8bb87e931" definitionId="b48e216c-da3e-46db-9fdd-51af29559489" definitionName="ProjectTemplates" instanceName="Project Templates" />
+                    <collection Id="59bd8826-775c-42a9-8d7b-73c328fd6a8f" definitionId="81dde21d-392a-4c60-a048-5c5445bf6542" definitionName="TextTemplates" instanceName="Text Templates" />
+                  </elements>
+                </collection>
+                <collection Id="355f52fc-0125-4cc5-801b-e4d669c2ea63" definitionId="e341bc69-c2e1-44ef-811f-6d092497c277" definitionName="Wizards" instanceName="Wizards">
+                  <elements>
+                    <collection Id="6cc34aed-c3e2-4aa8-b92b-3a2119a7720c" definitionId="3906075a-6263-4e5d-be94-3750e6fc1e57" definitionName="WizardPages" instanceName="Wizard Pages" />
+                  </elements>
+                </collection>
+              </elements>
+            </collection>
+            <collection Id="7ededea2-d7aa-4eb6-b84b-a551843cc449" definitionId="994965b7-d2b1-4460-8947-44ca73227b5f" definitionName="Automation" instanceName="Automation">
+              <extensionProducts>
+                <product Id="10e6778a-50fa-48a9-b186-9e310676d27b" definitionId="d6139b37-9971-4834-a9dc-2b3daef962cf" definitionName="PatternToolkitLibrary" instanceName="Library" extensionId="97bd7ab2-964b-43f1-8a08-be6db68b018b">
+                  <properties>
+                    <property Id="da92eadf-5baa-4b53-8a86-7b98b9842c70" definitionId="96a8d40e-c7e5-47ba-b550-489745d95cd2" definitionName="TransformOnBuild" rawValue="Always" />
+                    <property Id="52a8246c-586d-431b-bf97-e32c37b67560" definitionId="32699d9a-aa7d-4a51-8c86-6b2a708be486" definitionName="ToolkitProjectRootNamespace" rawValue="ClariusLabs.NuGet.Toolkit" />
+                    <property Id="58dc94fb-0943-4d41-9073-1a8d85540390" definitionId="11ac48e6-d493-49ca-9a01-65dac40d6d42" definitionName="ProjectAssemblyName" rawValue="ClariusLabs.NuGet.Toolkit.Automation" />
+                    <property Id="13b365b1-c578-4a6e-9b6e-40653df1c578" definitionId="7864a4c0-2152-4c05-8bf3-30d414d312f8" definitionName="ProjectName" rawValue="Toolkit.Automation" />
+                    <property Id="d625d329-2ce0-48d3-94ba-3b20903eeaf6" definitionId="44d4abc1-7e06-4ea4-8673-d0adb12fea71" definitionName="ExcludeFromCodeCoverage" rawValue="True" />
+                  </properties>
+                  <references>
+                    <reference Id="422b4351-7c62-4c58-8c9f-aa7c876afdda" value="solution://2be755a5-0f42-42f6-a599-e56461415101/" kind="NuPattern.Runtime.References.SolutionArtifactLinkReference" tag="{&#xD;&#xA;  &quot;Tag&quot;: &quot;&quot;,&#xD;&#xA;  &quot;TargetFileName&quot;: &quot;{Parent.Parent.Parent.InstanceName}.Automation&quot;,&#xD;&#xA;  &quot;SyncNames&quot;: false,&#xD;&#xA;  &quot;Id&quot;: &quot;0d64d7af-d72f-434f-9693-1f27420bec49&quot;&#xD;&#xA;}" />
+                    <reference Id="ac4ce761-4f41-4406-9cb7-f30fb75fb7e1" value="solution://2be755a5-0f42-42f6-a599-e56461415101/205d0018-b5ef-44d4-8fc4-ed0237b605b3" kind="NuPattern.Runtime.References.SolutionArtifactLinkReference" tag="{&#xD;&#xA;  &quot;Tag&quot;: &quot;&quot;,&#xD;&#xA;  &quot;TargetFileName&quot;: &quot;CollectionImplementation&quot;,&#xD;&#xA;  &quot;SyncNames&quot;: false,&#xD;&#xA;  &quot;Id&quot;: &quot;a1e74b34-d9bf-4e25-a315-74d51294975f&quot;&#xD;&#xA;}" />
+                    <reference Id="88675afb-e44c-4a5a-87ad-18df5ea7037d" value="solution://2be755a5-0f42-42f6-a599-e56461415101/e0a2b8b2-bac6-487b-b77f-4efbdcbb85dd" kind="NuPattern.Runtime.References.SolutionArtifactLinkReference" tag="{&#xD;&#xA;  &quot;Tag&quot;: &quot;&quot;,&#xD;&#xA;  &quot;TargetFileName&quot;: &quot;CollectionInterface&quot;,&#xD;&#xA;  &quot;SyncNames&quot;: false,&#xD;&#xA;  &quot;Id&quot;: &quot;96e80e8c-72a5-48ef-9ddd-cfce9683f920&quot;&#xD;&#xA;}" />
+                    <reference Id="f1bc9d63-2c56-4e5c-bf09-23178c0a29e1" value="solution://2be755a5-0f42-42f6-a599-e56461415101/83d70143-a748-4c44-9a77-703cb6199ce2" kind="NuPattern.Runtime.References.SolutionArtifactLinkReference" tag="{&#xD;&#xA;  &quot;Tag&quot;: &quot;&quot;,&#xD;&#xA;  &quot;TargetFileName&quot;: &quot;ElementImplementation&quot;,&#xD;&#xA;  &quot;SyncNames&quot;: false,&#xD;&#xA;  &quot;Id&quot;: &quot;2f1d4f4f-8f24-4913-876f-0dcc7298477d&quot;&#xD;&#xA;}" />
+                    <reference Id="95cb68e2-2201-4015-ac30-7df9c06be77c" value="solution://2be755a5-0f42-42f6-a599-e56461415101/dfd83c31-1843-42db-8e9d-f7b3dc0cd710" kind="NuPattern.Runtime.References.SolutionArtifactLinkReference" tag="{&#xD;&#xA;  &quot;Tag&quot;: &quot;&quot;,&#xD;&#xA;  &quot;TargetFileName&quot;: &quot;ElementInterface&quot;,&#xD;&#xA;  &quot;SyncNames&quot;: false,&#xD;&#xA;  &quot;Id&quot;: &quot;73db0a50-aca1-46eb-8152-0efa5c30c224&quot;&#xD;&#xA;}" />
+                    <reference Id="e0a63046-7a05-4c65-a5af-649fa9f81a86" value="solution://2be755a5-0f42-42f6-a599-e56461415101/8ca79fbe-5ef3-4668-a910-604a2a6fc450" kind="NuPattern.Runtime.References.SolutionArtifactLinkReference" tag="{&#xD;&#xA;  &quot;Tag&quot;: &quot;&quot;,&#xD;&#xA;  &quot;TargetFileName&quot;: &quot;ExtensionPointImplementation&quot;,&#xD;&#xA;  &quot;SyncNames&quot;: false,&#xD;&#xA;  &quot;Id&quot;: &quot;0de28231-e6dd-4c93-807e-c881e4a3350c&quot;&#xD;&#xA;}" />
+                    <reference Id="b1d8a064-06ba-4ceb-a184-f968eae252b2" value="solution://2be755a5-0f42-42f6-a599-e56461415101/274873ae-21c7-455d-80cd-cdd1d4a09eb3" kind="NuPattern.Runtime.References.SolutionArtifactLinkReference" tag="{&#xD;&#xA;  &quot;Tag&quot;: &quot;&quot;,&#xD;&#xA;  &quot;TargetFileName&quot;: &quot;ExtensionPointInterface&quot;,&#xD;&#xA;  &quot;SyncNames&quot;: false,&#xD;&#xA;  &quot;Id&quot;: &quot;b8abcbb4-80dc-4cc8-b4a8-28ce1ddefe72&quot;&#xD;&#xA;}" />
+                    <reference Id="e2c998d6-8cb3-4162-9b2c-8aa7a23b761a" value="solution://2be755a5-0f42-42f6-a599-e56461415101/49c37fba-c673-4bf0-9638-682751e11485" kind="NuPattern.Runtime.References.SolutionArtifactLinkReference" tag="{&#xD;&#xA;  &quot;Tag&quot;: &quot;&quot;,&#xD;&#xA;  &quot;TargetFileName&quot;: &quot;ProductImplementation&quot;,&#xD;&#xA;  &quot;SyncNames&quot;: false,&#xD;&#xA;  &quot;Id&quot;: &quot;9c6234d2-57bf-48f1-ae44-ced15c11330a&quot;&#xD;&#xA;}" />
+                    <reference Id="389b374a-3bf2-48a8-b883-961b7b00db5b" value="solution://2be755a5-0f42-42f6-a599-e56461415101/8a7476c5-3266-49b5-90fa-ebf7146da276" kind="NuPattern.Runtime.References.SolutionArtifactLinkReference" tag="{&#xD;&#xA;  &quot;Tag&quot;: &quot;&quot;,&#xD;&#xA;  &quot;TargetFileName&quot;: &quot;ProductInterface&quot;,&#xD;&#xA;  &quot;SyncNames&quot;: false,&#xD;&#xA;  &quot;Id&quot;: &quot;d3d36308-2c85-4c1f-8c3e-f471ca54fa4f&quot;&#xD;&#xA;}" />
+                    <reference Id="221529e6-1bdb-4b7e-be1e-ec6ea369de54" value="solution://2be755a5-0f42-42f6-a599-e56461415101/9438f9c7-603a-4f33-afce-25c73bb95d39" kind="NuPattern.Runtime.References.SolutionArtifactLinkReference" tag="{&#xD;&#xA;  &quot;Tag&quot;: &quot;&quot;,&#xD;&#xA;  &quot;TargetFileName&quot;: &quot;ViewInterface&quot;,&#xD;&#xA;  &quot;SyncNames&quot;: false,&#xD;&#xA;  &quot;Id&quot;: &quot;2ede7e98-3f5a-44c1-8bb6-fc6dcaed78de&quot;&#xD;&#xA;}" />
+                    <reference Id="9d1ced14-ba5b-437d-9842-16e62a2a6f0b" value="solution://2be755a5-0f42-42f6-a599-e56461415101/70e17178-fe16-4324-8522-252e39b19a5a" kind="NuPattern.Runtime.References.SolutionArtifactLinkReference" tag="{&#xD;&#xA;  &quot;Tag&quot;: &quot;&quot;,&#xD;&#xA;  &quot;TargetFileName&quot;: &quot;ViewImplementation&quot;,&#xD;&#xA;  &quot;SyncNames&quot;: false,&#xD;&#xA;  &quot;Id&quot;: &quot;75fbc53d-9c5e-45f9-a1d6-67b3382c3f2a&quot;&#xD;&#xA;}" />
+                  </references>
+                  <views>
+                    <view Id="e07f2547-df10-425c-844d-0439a7d7b59d" definitionId="e0779d33-8f19-4025-9a57-e75bc53a03ff" definitionName="Development">
+                      <elements>
+                        <collection Id="fa8da888-28cb-4787-8c44-303fa5c0fb6c" definitionId="184bf063-7339-4866-978c-964d9d995c32" definitionName="Commands" instanceName="Commands" />
+                        <collection Id="fd319a5d-5ad3-4b29-81e9-4e4696b7feee" definitionId="2226c6bc-3e33-4570-8807-f68bbfbbffcd" definitionName="Conditions" instanceName="Conditions" />
+                        <collection Id="3c4a5bea-32ef-427b-ad40-554734083ebc" definitionId="f0e386f0-bf6f-4560-978f-32396e30c4e5" definitionName="Events" instanceName="Events" />
+                        <collection Id="db171800-860c-44b0-835c-570ec190fb49" definitionId="96227e6c-f4a5-421c-8f0a-e38763d86740" definitionName="TypeConverters" instanceName="Type Converters" />
+                        <collection Id="964420ab-03a3-427e-a9a7-6577f5e38029" definitionId="7fe79778-3880-4daf-a4e5-c401f131c5db" definitionName="TypeEditors" instanceName="Type Editors" />
+                        <collection Id="f9946eda-c0ad-4210-b49a-c24deed543ed" definitionId="c398e040-eb92-481a-a1a4-67d1eac1edff" definitionName="ValidationRules" instanceName="Validation Rules" />
+                        <collection Id="a994d3f7-431f-4cb9-aa2a-438aeb1326ae" definitionId="fa75b840-b733-4365-bcb0-5e513092f4dd" definitionName="ValueProviders" instanceName="Value Providers" />
+                        <collection Id="748f72f5-3914-4ded-b96e-aa7e7b478c56" definitionId="18765960-f08b-4bd2-a0e5-fb547a182517" definitionName="ValueComparers" instanceName="Value Comparers" />
+                      </elements>
+                    </view>
+                  </views>
+                </product>
+              </extensionProducts>
+            </collection>
+          </elements>
+        </view>
+        <view Id="9ad2bc89-a79f-47fe-af08-4f189dee9414" definitionId="a5541c90-1637-4405-9fe7-4b31f28eb3cd" definitionName="Design">
+          <elements>
+            <element Id="d33ab9ab-6cc8-4a75-8bab-dfc2b0ed2f78" definitionId="9291502b-fefc-4ef8-afc0-4c6914f0d2d1" definitionName="ProductionTooling" instanceName="Production Tooling">
+              <references>
+                <reference Id="902eba83-281e-4892-85db-4183a5143e9e" value="solution://1596df55-695b-4b8a-ab47-6154b086ca9f/f5f71fb9-79ea-4486-9d2d-76578c19a502" kind="NuPattern.Runtime.References.SolutionArtifactLinkReference" tag="{&#xD;&#xA;  &quot;Tag&quot;: &quot;&quot;,&#xD;&#xA;  &quot;TargetFileName&quot;: &quot;PatternTooling.toolingdesign&quot;,&#xD;&#xA;  &quot;SyncNames&quot;: false,&#xD;&#xA;  &quot;Id&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;&#xD;&#xA;}" />
+              </references>
+            </element>
+          </elements>
+        </view>
+      </views>
+    </product>
+  </products>
+</productState>

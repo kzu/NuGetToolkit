@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<vSPackageDesignerDiagram dslVersion="1.0.0.0" Id="e280ae03-a0ec-4be9-ada4-d6a017f5aa87" absoluteBounds="0, 0, 11, 9.25" name="Toolkit">
+  <rootMoniker Id="85f48dbf-367c-4618-88ba-c9f3e72aec0b" />
+  <nestedChildShapes>
+    <commandTableSwimlane Id="d2c0bef6-abf2-4cb3-9e0c-7c034f705dd9" absoluteBounds="0, 0, 8.5, 9.25">
+      <commandTableMoniker Id="6676b0bf-cbe2-49f3-98b9-d9ba25ae8faf" />
+      <nestedChildShapes>
+        <buttonShape Id="6c6060e9-dde8-4109-b33f-a82b0bf390bd" absoluteBounds="2.875, 3.5, 1.5, 0.625">
+          <buttonMoniker Id="de2f71c4-dc9f-4d8b-8b79-9fa8afe179d8" />
+        </buttonShape>
+        <buttonShape Id="9a8604e1-f89e-4a42-af5f-7f7674864a5b" absoluteBounds="2.875, 1.5, 1.5, 0.625">
+          <buttonMoniker Id="ec8fab8c-6979-4161-a387-ae6da16443f7" />
+        </buttonShape>
+        <externalGroupShape Id="2b4bdcf9-9197-4190-81e0-56a3612f3296" absoluteBounds="0.625, 2.5, 1.5, 0.625">
+          <externalGroupMoniker Id="aa8737ea-9a94-4347-be1a-282c100ef81c" />
+        </externalGroupShape>
+        <containsConnector Id="296b2ff6-8fda-4378-b917-119109ff8ccd" edgePoints="[(1.375 : 3.125); (1.375 : 3.8125); (1.74791916666667 : 3.8125 : JumpStart); (1.81458583333333 : 3.8125 : JumpEnd); (2.875 : 3.8125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+          <groupBaseReferencesButtonsMoniker Id="d7301147-568c-48ef-b155-277bafbde56a" />
+          <nodes>
+            <externalGroupShapeMoniker Id="2b4bdcf9-9197-4190-81e0-56a3612f3296" />
+            <buttonShapeMoniker Id="6c6060e9-dde8-4109-b33f-a82b0bf390bd" />
+          </nodes>
+        </containsConnector>
+        <externalGroupShape Id="7afdc3c5-e447-4dbc-9bf0-e1606c996d8a" absoluteBounds="0.625, 1.5, 1.5, 0.625">
+          <externalGroupMoniker Id="881bd92c-bc57-475c-9a36-88347819a2d1" />
+        </externalGroupShape>
+        <containsConnector Id="4eaeb97c-3eb9-4ac9-969e-e88fdb1508ec" edgePoints="[(2.125 : 1.8125); (2.875 : 1.8125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+          <groupBaseReferencesButtonsMoniker Id="c9731481-b8a8-447b-8b9d-9a284c58b64f" />
+          <nodes>
+            <externalGroupShapeMoniker Id="7afdc3c5-e447-4dbc-9bf0-e1606c996d8a" />
+            <buttonShapeMoniker Id="9a8604e1-f89e-4a42-af5f-7f7674864a5b" />
+          </nodes>
+        </containsConnector>
+        <buttonShape Id="93e5e4f8-7038-4d36-9077-4a1be80cbd81" absoluteBounds="2.875, 2.5, 1.5, 0.625">
+          <buttonMoniker Id="4d7221ee-5ab8-4496-ae7d-220c0a1b7280" />
+        </buttonShape>
+        <containsConnector Id="defc91c0-6358-4718-b850-daf21655e58c" edgePoints="[(2.125 : 2.8125); (2.875 : 2.8125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+          <groupBaseReferencesButtonsMoniker Id="ab268421-6764-4d74-bd5a-0a7f35f7d42a" />
+          <nodes>
+            <externalGroupShapeMoniker Id="2b4bdcf9-9197-4190-81e0-56a3612f3296" />
+            <buttonShapeMoniker Id="93e5e4f8-7038-4d36-9077-4a1be80cbd81" />
+          </nodes>
+        </containsConnector>
+        <buttonShape Id="c255f769-d771-4c09-bc43-2b5490dbcc72" absoluteBounds="2.875, 4.625, 1.5, 0.625">
+          <buttonMoniker Id="3eb3b515-172c-43b0-ad2a-4aad131d0c21" />
+        </buttonShape>
+        <containsConnector Id="b64f34b3-03bd-4c1c-ab48-3cd8af08c4a6" edgePoints="[(1.7812525 : 3.125); (1.7812525 : 4.9375); (2.875 : 4.9375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+          <groupBaseReferencesButtonsMoniker Id="34cb6e38-410c-4d6a-927a-5e3fcb32fbff" />
+          <nodes>
+            <externalGroupShapeMoniker Id="2b4bdcf9-9197-4190-81e0-56a3612f3296" />
+            <buttonShapeMoniker Id="c255f769-d771-4c09-bc43-2b5490dbcc72" />
+          </nodes>
+        </containsConnector>
+      </nestedChildShapes>
+    </commandTableSwimlane>
+    <toolwindowSwimlane Id="ab3d0f97-1ffd-49af-84b7-820cb28c69db" absoluteBounds="8.5, 0, 2.5, 9.25">
+      <userInterfaceMoniker Id="d19ba71d-d044-43a8-9c97-385e8b9c3eda" />
+    </toolwindowSwimlane>
+  </nestedChildShapes>
+</vSPackageDesignerDiagram>

@@ -1,0 +1,5 @@
+﻿<#@ include file="..\..\Toolkit\source.extension.gen.ttinclude" #>
+<#@ output extension=".cs" #>
+using System.Reflection;
+
+[assembly: AssemblyTitle("<#= libraryProjectName #>")]

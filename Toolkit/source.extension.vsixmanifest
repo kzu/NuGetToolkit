@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Vsix xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="1.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2010">
+    <Identifier Id="dea21b17-80c8-451d-ae19-0c0f05a01ecc">
+        <Name>NuGet Toolkit</Name>
+        <Author>Clarius Labs</Author>
+        <Version>1.0.0.0</Version>
+        <Description xml:space="preserve">A NuPattern toolkit for creating and managing NuGet packages in a Visual Studio solution</Description>
+        <Locale>1033</Locale>
+        <Icon>Resources\ToolkitIcon.png</Icon>
+        <MoreInfoUrl></MoreInfoUrl>
+        <GettingStartedGuide></GettingStartedGuide>
+        <PreviewImage></PreviewImage>
+        <SupportedProducts>
+            <VisualStudio Version="11.0">
+                <Edition>Pro</Edition>
+            </VisualStudio>
+        </SupportedProducts>
+        <SupportedFrameworkRuntimeEdition MinVersion="4.0" MaxVersion="4.5"/>
+    </Identifier>
+    <References>
+        <Reference Id="93373818-600f-414b-8181-3a0cb79fa785" MinVersion="1.3.20.0">
+            <Name>NuPattern Toolkit Manager</Name>
+            <VsixPath>NuPatternToolkitManager.vsix</VsixPath>
+        </Reference>
+    </References>
+    <Content>
+        <VsPackage>|%CurrentProject%;PkgdefProjectOutputGroup|</VsPackage>
+        <CustomExtension Type="ClideComponent">|%CurrentProject%|</CustomExtension>
+        <MefComponent>|%CurrentProject%|</MefComponent>
+        <MefComponent>|Toolkit.Automation|</MefComponent>
+        <CustomExtension Type="NuPattern.Toolkit.PatternModel" AssemblyFile="ClariusLabs.NuGet.Toolkit.dll">ClariusLabs.NuGet.Toolkit.PatternModel.patterndefinition</CustomExtension>
+        <ItemTemplate>Assets\Templates\Items</ItemTemplate>
+        <ProjectTemplate>Assets\Templates\Projects</ProjectTemplate>
+    </Content>
+</Vsix>

@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toolkit", "Toolkit\Toolkit.csproj", "{1596DF55-695B-4B8A-AB47-6154B086CA9F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9D03CB8C-23BD-46A7-B612-DFDC3FE40CB3}"
+	ProjectSection(SolutionItems) = preProject
+		Toolkit.guidancestate = Toolkit.guidancestate
+		Toolkit.slnbldr = Toolkit.slnbldr
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toolkit.Automation", "Toolkit.Automation\Toolkit.Automation.csproj", "{2BE755A5-0F42-42F6-A599-E56461415101}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1596DF55-695B-4B8A-AB47-6154B086CA9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1596DF55-695B-4B8A-AB47-6154B086CA9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1596DF55-695B-4B8A-AB47-6154B086CA9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1596DF55-695B-4B8A-AB47-6154B086CA9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BE755A5-0F42-42F6-A599-E56461415101}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BE755A5-0F42-42F6-A599-E56461415101}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BE755A5-0F42-42F6-A599-E56461415101}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BE755A5-0F42-42F6-A599-E56461415101}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		GuidanceWorkflows = 9f6dc301-6f66-4d21-9f9c-b37412b162f6:Creating Pattern Toolkits:1.3.20.0
+	EndGlobalSection
+EndGlobal

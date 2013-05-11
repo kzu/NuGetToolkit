@@ -1,0 +1,6 @@
+﻿<#@ include file="..\source.extension.gen.ttinclude" #>
+<#@ output extension=".cs" #>
+using System.Reflection;
+
+[assembly: AssemblyTitle("<#= assemblyName #>")]
+[assembly: AssemblyDescription("<#= description #>")]

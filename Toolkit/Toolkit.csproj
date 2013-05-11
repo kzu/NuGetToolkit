@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <!--
+    <IncludeAssemblyInVSIXContainer>true</IncludeAssemblyInVSIXContainer>
+    <IncludeDebugSymbolsInVSIXContainer>false</IncludeDebugSymbolsInVSIXContainer>
+    <IncludeDebugSymbolsInLocalVSIXDeployment>true</IncludeDebugSymbolsInLocalVSIXDeployment>
+    <CopyBuildOutputToOutputDirectory>true</CopyBuildOutputToOutputDirectory>
+    <CopyOutputSymbolsToOutputDirectory>true</CopyOutputSymbolsToOutputDirectory>
+    -->
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{82b43b9b-a64c-4715-b499-d71e9ca2bd60};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{1596DF55-695B-4B8A-AB47-6154B086CA9F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ClariusLabs.NuGet.Toolkit</RootNamespace>
+    <AssemblyName>ClariusLabs.NuGet.Toolkit</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Clide">
+      <HintPath>..\packages\Clide.1.3.1301.2116\lib\net40\Clide.dll</HintPath>
+    </Reference>
+    <Reference Include="EnvDTE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.GraphModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.OLE.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualStudio.Shell.11.0, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Shell.Immutable.11.0, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.10.0, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.11.0, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.8.0, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.9.0, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="NuGet.VisualStudio">
+      <HintPath>..\packages\NuGet.VisualStudio.2.5.0\lib\net40\NuGet.VisualStudio.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="Microsoft.VisualStudio.ExtensibilityHosting, Version=10.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>True</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Immutable.10.0" />
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="NuPattern.Common">
+      <HintPath>$(PatternToolkitRuntime)\NuPattern.Common.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="NuPattern.Library">
+      <HintPath>$(PatternToolkitRuntime)\NuPattern.Library.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="NuPattern.Presentation">
+      <HintPath>$(PatternToolkitRuntime)\NuPattern.Presentation.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="NuPattern.Runtime.Extensibility">
+      <HintPath>$(PatternToolkitRuntime)\NuPattern.Runtime.Extensibility.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="NuPattern.VisualStudio">
+      <HintPath>$(PatternToolkitRuntime)\NuPattern.VisualStudio.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\CheckUpdates.cs" />
+    <Compile Include="Commands\Uninstall.cs" />
+    <Compile Include="Commands\Reinstall.cs" />
+    <Compile Include="Commands\Update.cs" />
+    <Compile Include="GeneratedCode\AssemblyInfo.cs">
+      <DependentUpon>AssemblyInfo.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="GeneratedCode\GlobalAssemblyInfo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GlobalAssemblyInfo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GeneratedCode\CommandIds.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CommandIds.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GeneratedCode\Guids.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Guids.tt</DependentUpon>
+    </Compile>
+    <Compile Include="netfx\System\Dynamic\DynamicReflection.cs" />
+    <Compile Include="netfx\System\Dynamic\OutValue.cs" />
+    <Compile Include="netfx\System\Dynamic\RefValue.cs" />
+    <Compile Include="netfx\System\Dynamic\TypeParameter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SelectionService.cs" />
+    <Compile Include="SolutionExplorer\GraphIcons.cs" />
+    <Compile Include="SolutionExplorer\GraphNodeExtensions.cs" />
+    <Compile Include="SolutionExplorer\GraphNodeNavigator.cs" />
+    <Compile Include="SolutionExplorer\Id.cs" />
+    <Compile Include="SolutionExplorer\LazyImage.cs" />
+    <Compile Include="SolutionExplorer\ReferencesGraphProvider.cs" />
+    <Compile Include="SolutionExplorer\ReferencesGraphSchema.cs" />
+    <Compile Include="VsPackage.cs" />
+    <Content Include="$(PatternToolkitRuntime)\GeneratedCode\LibrarySchema.xsd">
+      <Visible>true</Visible>
+      <Link>Properties\Schemas\LibrarySchema.xsd</Link>
+      <FixedLink>
+      </FixedLink>
+    </Content>
+    <Content Include="$(PatternToolkitRuntime)\GeneratedCode\PatternModelSchema.xsd">
+      <Visible>true</Visible>
+      <Link>Properties\Schemas\PatternModelSchema.xsd</Link>
+      <FixedLink>
+      </FixedLink>
+    </Content>
+    <Content Include="$(PatternToolkitBuilder)\GeneratedCode\WorkflowDesignSchema.xsd">
+      <Visible>true</Visible>
+      <Link>Properties\Schemas\WorkflowDesignSchema.xsd</Link>
+      <FixedLink>
+      </FixedLink>
+    </Content>
+    <VSCTCompile Include="GeneratedCode\CommandTable.vsct">
+      <ResourceName>1000</ResourceName>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CommandTable.tt</DependentUpon>
+    </VSCTCompile>
+    <Resource Include="Resources\nuget.png" />
+    <Resource Include="Resources\package.ico" />
+    <Content Include="Resources\Pattern.ico" />
+    <Content Include="Resources\Toolkit.ico" />
+    <Content Include="Resources\ToolkitIcon.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <None Include="Assets\Guidance\ToolkitGuidance.doc">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/Toolkit/Element/D:\Code\github.com\NuGetToolkit\Toolkit\Toolkit.slnbldr%252fbd895ff2-edda-4214-a552-edd1b82aec6c</SourceModelReference>
+      <ItemGuid>44d2e4ad-64ec-442c-b95d-aee1e3d41d10</ItemGuid>
+    </None>
+    <None Include="GeneratedCode\CommandIds.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CommandIds.cs</LastGenOutput>
+    </None>
+    <None Include="GeneratedCode\CommandTable.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CommandTable.vsct</LastGenOutput>
+    </None>
+    <None Include="GeneratedCode\GlobalAssemblyInfo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>GlobalAssemblyInfo.cs</LastGenOutput>
+    </None>
+    <None Include="GeneratedCode\AssemblyInfo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AssemblyInfo.cs</LastGenOutput>
+    </None>
+    <None Include="GeneratedCode\Guids.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Guids.cs</LastGenOutput>
+    </None>
+    <None Include="GeneratedCode\VSPackage.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>VSPackage.resx</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="PatternTooling.toolingdesign">
+      <ItemGuid>f5f71fb9-79ea-4486-9d2d-76578c19a502</ItemGuid>
+    </None>
+    <None Include="source.extension.vsixmanifest">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>source.extension.tt</DependentUpon>
+      <IsToolkitManifest>True</IsToolkitManifest>
+    </None>
+    <None Include="Toolkit.vspackage">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Toolkit.vspackage.diagram">
+      <DependentUpon>Toolkit.vspackage</DependentUpon>
+    </None>
+    <Resource Include="Resources\PatternIcon.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Resource>
+    <Content Include="$(PatternToolkitBuilder)\NuPatternToolkitManager.vsix">
+      <Visible>false</Visible>
+      <Link>NuPatternToolkitManager.vsix</Link>
+      <FixedLink>
+      </FixedLink>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Toolkit.Automation\Toolkit.Automation.csproj">
+      <Name>Toolkit.Automation</Name>
+      <IncludeOutputGroupsInVSIX>BuiltProjectOutputGroup</IncludeOutputGroupsInVSIX>
+      <IncludeOutputGroupsInVSIXLocalOnly>DebugSymbolsProjectOutputGroup</IncludeOutputGroupsInVSIXLocalOnly>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4df5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets\Templates\Items\" />
+    <Folder Include="Assets\Templates\Projects\" />
+    <Folder Include="Assets\Templates\Text\" />
+    <Folder Include="Assets\Wizards\Pages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PatternModel.patterndefinition">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/Toolkit/Element/D:\Code\github.com\NuGetToolkit\Toolkit\Toolkit.slnbldr%252fc8b57432-4f51-40f4-8332-db8035ef375b</SourceModelReference>
+      <ItemGuid>5dd02e06-3d01-4792-99af-c7b8ac2646bb</ItemGuid>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeneratedCode\VSPackage.resx">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VSPackage.tt</DependentUpon>
+      <MergeWithCTO>true</MergeWithCTO>
+      <ManifestResourceName>VSPackage</ManifestResourceName>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="38126ed3-80bc-467c-acef-075f092c5e1b.patterndefinition.diagram">
+      <DependentUpon>PatternModel.patterndefinition</DependentUpon>
+    </None>
+    <None Include="source.extension.gen.ttinclude">
+      <DependentUpon>source.extension.tt</DependentUpon>
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/Toolkit/Element/D:\Code\github.com\NuGetToolkit\Toolkit.slnbldr%252febb695e1-7fb7-43d5-b62e-a3836b7026e2</SourceModelReference>
+      <ItemGuid>58002652-8c31-478b-88c0-217599678c35</ItemGuid>
+    </None>
+    <None Include="source.extension.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>source.extension.vsixmanifest</LastGenOutput>
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/Toolkit/Element/D:\Code\github.com\NuGetToolkit\Toolkit\Toolkit.slnbldr%252febb695e1-7fb7-43d5-b62e-a3836b7026e2</SourceModelReference>
+      <ItemGuid>f2f2f1db-9659-44d4-8019-0565345ee39c</ItemGuid>
+    </None>
+  </ItemGroup>
+  <!-- Properties for Toolkit Targets -->
+  <PropertyGroup>
+    <CopyVsixDebuggingDependencies>true</CopyVsixDebuggingDependencies>
+    <CopyVsixToFolder Condition=" '$(TeamBuildConstants)' == '' ">$(SolutionDir)Binaries</CopyVsixToFolder>
+    <!-- <CopyVsixToFolder Condition=" '$(TeamBuildConstants)' != '' ">$(SolutionRoot)\TeamProjectRoot\Projects\BranchPath\Binaries</CopyVsixToFolder> -->
+  </PropertyGroup>
+  <PropertyGroup>
+    <UseCodebase>true</UseCodebase>
+    <!--
+    <GacTargetOutput>false</GacTargetOutput>
+    <GeneratePkgDefFile>true</GeneratePkgDefFile>
+    <RegisterOutputPackage>true</RegisterOutputPackage>
+    <RegisterWithCodebase>true</RegisterWithCodebase>
+    -->
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" />
+  <Import Project="$(localappdata)\Microsoft\MSBuild\NuPattern\NuPattern Toolkit Builder\NuPattern.Authoring.PatternToolkitVersion.targets" />
+  <PropertyGroup>
+    <StartProgram>$(DevEnvDir)\devenv.exe</StartProgram>
+    <StartAction>Program</StartAction>
+    <StartArguments>/rootsuffix Exp</StartArguments>
+  </PropertyGroup>
+</Project>

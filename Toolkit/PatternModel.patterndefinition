@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<patternModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/visualstudio/patterning/library/automationextensions" dslVersion="1.3.0.0" Id="a392eabd-a618-4240-86fd-712ae8e09c25" xmlns="http://schemas.microsoft.com/visualstudio/patterning/runtime/patternmodel">
+  <dm0:extensions>
+    <guidanceExtension Id="8e561bb6-5f10-4930-9d30-6a9ee7a9c34c">
+      <extendedElement>
+        <patternSchemaMoniker Id="b6e95f5e-1056-4824-9ab0-b93b1783bc7d" />
+      </extendedElement>
+    </guidanceExtension>
+    <artifactExtension Id="3b9c4f54-9072-4033-a47c-c8f5455060e9">
+      <extendedElement>
+        <patternSchemaMoniker Id="b6e95f5e-1056-4824-9ab0-b93b1783bc7d" />
+      </extendedElement>
+    </artifactExtension>
+    <validationExtension Id="39616cb5-8de3-4b4a-b645-0946f7836ffe">
+      <extendedElement>
+        <patternSchemaMoniker Id="b6e95f5e-1056-4824-9ab0-b93b1783bc7d" />
+      </extendedElement>
+    </validationExtension>
+  </dm0:extensions>
+  <pattern Id="b6e95f5e-1056-4824-9ab0-b93b1783bc7d" name="NuGetPackage" displayName="NuGet Package" description="A NuGet Package" codeIdentifier="NuGetPackage" isCustomizable="True" icon="pack://application:,,,/ClariusLabs.NuGet.Toolkit;component/Resources/PatternIcon.png" currentDiagramId="38126ed3-80bc-467c-acef-075f092c5e1b" patternLink="patternmanager://38134725-df90-4a06-a016-fb52ad4d96f7">
+    <customizationPolicy name="CustomizationPolicySchema1">
+      <settings>
+        <setting propertyId="DisplayName" />
+        <setting propertyId="Description" />
+        <setting propertyId="ValidationRules" />
+        <setting propertyId="Icon" />
+      </settings>
+    </customizationPolicy>
+    <views>
+      <view Id="e0e80bd9-d562-48de-8641-a1406409c64f" name="DefaultView" displayName="Default View" description="Description for NuGetPackage.DefaultView" codeIdentifier="DefaultView" isDefault="true" diagramId="38126ed3-80bc-467c-acef-075f092c5e1b">
+        <customizationPolicy name="CustomizationPolicySchema1">
+          <settings>
+            <setting propertyId="DisplayName" />
+            <setting propertyId="Description" />
+            <setting propertyId="IsVisible" />
+            <setting propertyId="IsDefault" />
+          </settings>
+        </customizationPolicy>
+      </view>
+    </views>
+  </pattern>
+</patternModel>
