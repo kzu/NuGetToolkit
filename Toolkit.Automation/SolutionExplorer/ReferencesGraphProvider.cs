@@ -1,4 +1,4 @@
-﻿namespace ClariusLabs.NuGet.Toolkit
+﻿namespace ClariusLabs.NuGetToolkit
 {
     using System;
     using System.Collections.Concurrent;
@@ -22,7 +22,7 @@
     using System.IO;
     using NuGet;
 
-    [GraphProvider(Name = Id.Prefix + ".GraphProvider")]
+    [GraphProvider(Name = Id.PrefixDot + "GraphProvider")]
     public class ReferencesGraphProvider : IGraphProvider, IVsSelectionEvents
     {
         delegate void SearchHandler(string term, IGraphContext context);
@@ -83,18 +83,17 @@
             else if (context.Direction == GraphContextDirection.Contains)
             {
                 var configNode = context.InputNodes.FirstOrDefault(node => node.IsConfigNode());
-                if (configNode != null && queueUserWorkItem)
+                if (configNode != null)
                 {
-                    ThreadPool.QueueUserWorkItem(TryAddPackageNodes, context);
-                }
-                else
-                {
-                    TryAddPackageNodes(context);
-                }
+                    if (queueUserWorkItem)
+                        ThreadPool.QueueUserWorkItem(TryAddPackageNodes, context);
+                    else
+                        TryAddPackageNodes(context);
 
-                // Prevent OnCompleted since we're either doing it 
-                // async or synchronously and completing in AddPackageNodes.
-                return;
+                    // Prevent OnCompleted since we're either doing it 
+                    // async or synchronously and completing in AddPackageNodes.
+                    return;
+                }
             }
             else if (context.Direction == GraphContextDirection.Custom)
             {
@@ -109,7 +108,8 @@
         {
             try
             {
-                AddPackageNodes((IGraphContext)state);
+                var context = (IGraphContext)state;
+                AddPackageNodes(context, context.InputNodes.First());
             }
             catch (Exception e)
             {
@@ -117,17 +117,16 @@
             }
         }
 
-        private void AddPackageNodes(IGraphContext context)
+        private void AddPackageNodes(IGraphContext context, GraphNode parentNode)
         {
-            var packagesNode = context.InputNodes.First();
-            var nodeId = packagesNode.GetValue<GraphNodeId>("Id");
-            var assemblyUri = nodeId.GetNestedValueByName<Uri>(CodeGraphNodeIdName.Assembly);
-            var projectPath = new FileInfo(assemblyUri.AbsolutePath).FullName;
+            var nodeId = parentNode.GetValue<GraphNodeId>("Id");
+            var projectUri = nodeId.GetNestedValueByName<Uri>(CodeGraphNodeIdName.Assembly);
+            var projectPath = new FileInfo(projectUri.AbsolutePath).FullName;
             var project = package.DevEnv.SolutionExplorer().Solution.Traverse()
                 .OfType<IProjectNode>()
                 .First(x => x.PhysicalPath.Equals(projectPath, StringComparison.OrdinalIgnoreCase));
 
-            AddPackageNodes(context, packagesNode, GetInstalledPackages(project));
+            AddPackageNodes(context, parentNode, GetInstalledPackages(project));
 
             context.OnCompleted();
         }
@@ -177,7 +176,7 @@
                 var parentId = parent.GetValue<GraphNodeId>("Id");
                 var nodeId = GraphNodeId.GetNested(parentId, GraphNodeId.GetPartial(CodeGraphNodeIdName.Member, package.Id));
                 var node = context.Graph.Nodes.GetOrCreate(nodeId, package.Id, ReferencesGraphSchema.PackageCategory);
-                
+
                 node.SetValue<string>(DgmlNodeProperties.Icon, GraphIcons.Package);
                 node.SetValue<IVsPackageMetadata>(ReferencesGraphSchema.PackageProperty, package);
 
@@ -195,8 +194,8 @@
         {
             var packageManager = managerFactory.CreatePackageManager();
             var projectManager = packageManager.GetProjectManager(project.As<Project>());
-            var projectPackages = new HashSet<string>(projectManager.LocalRepository.GetPackages().Select(x => x.Id));
-            var allPackages = packageInstaller.GetInstalledPackages().Where(x => projectPackages.Contains(x.Id));
+            var projectPackages = new HashSet<Tuple<string, SemanticVersion>>(projectManager.LocalRepository.GetPackages().Select(x => Tuple.Create(x.Id, x.Version)));
+            var allPackages = packageInstaller.GetInstalledPackages().Where(x => projectPackages.Contains(Tuple.Create(x.Id, x.Version)));
 
             return allPackages;
         }
@@ -321,6 +320,7 @@
                         var selectedGraphNode = objects.FirstOrDefault() as ISelectedGraphNode;
                         if (selectedGraphNode != null)
                         {
+                            package.SelectedNode = selectedGraphNode;
                             var selectedPackage = selectedGraphNode.Node.GetValue<IVsPackageMetadata>(ReferencesGraphSchema.PackageProperty);
                             if (selectedPackage != null)
                             {

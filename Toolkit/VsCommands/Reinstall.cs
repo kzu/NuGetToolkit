@@ -1,4 +1,4 @@
-﻿namespace ClariusLabs.NuGet.Toolkit.Commands
+﻿namespace ClariusLabs.NuGetToolkit.VsCommands
 {
     using System;
     using System.Diagnostics;
@@ -20,7 +20,7 @@
 
         public void QueryStatus(IMenuCommand command)
         {
-            command.Enabled = command.Visible = true;
+            command.Enabled = command.Visible = false;
         }
 
         public string Text { get; set; }

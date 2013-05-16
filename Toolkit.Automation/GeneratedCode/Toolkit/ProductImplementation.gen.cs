@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ClariusLabs.NuGet.Toolkit
+namespace ClariusLabs.NuGetToolkit
 {
 	using global::NuPattern.Runtime;
 	using global::NuPattern.Runtime.Bindings;

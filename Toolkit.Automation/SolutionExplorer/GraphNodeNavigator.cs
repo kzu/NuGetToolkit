@@ -1,4 +1,4 @@
-﻿namespace ClariusLabs.NuGet.Toolkit
+﻿namespace ClariusLabs.NuGetToolkit
 {
     using EnvDTE;
     using Microsoft.VisualStudio.GraphModel;

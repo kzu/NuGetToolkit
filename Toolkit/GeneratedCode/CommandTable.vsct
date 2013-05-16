@@ -22,6 +22,7 @@
   <Commands package="guidPackage">
     <Buttons>
         <Button guid="guidCommandSet" id="Update" priority="0x0100">
+	        <Icon guid="CheckUpdates.bmpGuid" id="CheckUpdates.bmpId" />
             <Strings>
               <CommandName>cmdidUpdate</CommandName>
               <ButtonText>Update</ButtonText>
@@ -37,7 +38,9 @@
               <ToolTipText>Check for Updates</ToolTipText>
             </Strings>
         </Button>
-        <Button guid="guidCommandSet" id="Reinstall" priority="0x0100">
+        <Button guid="guidCommandSet" id="Reinstall" priority="0x0100"><CommandFlag>DefaultInvisible</CommandFlag>
+	        <CommandFlag>DynamicVisibility</CommandFlag>
+
             <Strings>
               <CommandName>cmdidReinstall</CommandName>
               <ButtonText>Reinstall</ButtonText>
@@ -46,6 +49,7 @@
             </Strings>
         </Button>
         <Button guid="guidCommandSet" id="Uninstall" priority="0x0100">
+	        <Icon guid="Uninstall.bmpGuid" id="Uninstall.bmpId" />
             <Strings>
               <CommandName>cmdidUninstall</CommandName>
               <ButtonText>Uninstall</ButtonText>
@@ -56,6 +60,10 @@
     </Buttons>
 
 
+  <Bitmaps>
+    <Bitmap guid="CheckUpdates.bmpGuid" href="..\Button Bitmaps\CheckUpdates.bmp" usedList="CheckUpdates.bmpId" />
+    <Bitmap guid="Uninstall.bmpGuid" href="..\Button Bitmaps\Uninstall.bmp" usedList="Uninstall.bmpId" />
+  </Bitmaps>
 
   </Commands>
 
@@ -87,6 +95,12 @@
       <IDSymbol name="Uninstall" value="0x000B" />
     </GuidSymbol>
 
+      <GuidSymbol name="CheckUpdates.bmpGuid" value="{d25104c0-6d51-498f-a7d0-acb055c3d30d}">
+        <IDSymbol name="CheckUpdates.bmpId" value="1" />
+      </GuidSymbol>
+      <GuidSymbol name="Uninstall.bmpGuid" value="{6029d5d6-5920-4474-90d4-75d623ea5be6}">
+        <IDSymbol name="Uninstall.bmpId" value="1" />
+      </GuidSymbol>
 </Symbols>
 
 </CommandTable>

@@ -1,4 +1,4 @@
-﻿namespace ClariusLabs.NuGet.Toolkit
+﻿namespace ClariusLabs.NuGetToolkit
 {
     using Microsoft.VisualStudio.GraphModel;
     using Microsoft.VisualStudio.GraphModel.Schemas;

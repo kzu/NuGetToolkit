@@ -2,7 +2,7 @@
 <root xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="85f48dbf-367c-4618-88ba-c9f3e72aec0b" xmlns="http://schemas.microsoft.com/dsltools/VSPackageDesigner">
   <commandTable>
     <rootHasCommandTable Id="c46e0a39-ba7a-4156-be3a-1f7ad888e888">
-      <commandTable Id="6676b0bf-cbe2-49f3-98b9-d9ba25ae8faf" packageGuid="9762932e-c8af-44f0-9071-e8257b5f2730" commandSetGuid="1cfa0a04-4933-454a-a332-2348cb39cb40" safeProjectName="ClariusLabs.NuGet.Toolkit" counter="1" imagesGuid="4d186c4f-4f97-415a-9aad-fafdcce0ae93" sampleData="false">
+      <commandTable Id="6676b0bf-cbe2-49f3-98b9-d9ba25ae8faf" packageGuid="9762932e-c8af-44f0-9071-e8257b5f2730" commandSetGuid="1cfa0a04-4933-454a-a332-2348cb39cb40" safeProjectName="ClariusLabs.NuGetToolkit" counter="1" imagesGuid="4d186c4f-4f97-415a-9aad-fafdcce0ae93" sampleData="false">
         <groups>
           <externalGroup Id="aa8737ea-9a94-4347-be1a-282c100ef81c" name="FileContents" idNumeric="8" parentData="guidSHLMainMenu,IDG_VS_CTXT_PROJWIN_FILECONTENTS_SCOPE,Group">
             <buttons>
@@ -27,16 +27,16 @@
         </groups>
         <buttons>
           <commandTableHasButtons Id="77d3a960-57b5-40a1-9c15-fb50a6230a23">
-            <button Id="de2f71c4-dc9f-4d8b-8b79-9fa8afe179d8" name="Update" idNumeric="2" buttonText="Update" menuText="Update" commandName="cmdidUpdate" toolTipText="Update" mod1="0" mod2="0" visibilityConstraints="0" commandFlags="0" sampleData="false" />
+            <button Id="de2f71c4-dc9f-4d8b-8b79-9fa8afe179d8" name="Update" idNumeric="2" buttonText="Update" menuText="Update" commandName="cmdidUpdate" toolTipText="Update" mod1="0" mod2="0" visibilityConstraints="0" icon="CheckUpdates.bmp" commandFlags="0" sampleData="false" />
           </commandTableHasButtons>
           <commandTableHasButtons Id="833a6066-380d-40c5-95bf-2446ae14ae9f">
             <button Id="ec8fab8c-6979-4161-a387-ae6da16443f7" name="CheckUpdates" idNumeric="6" buttonText="Check for Updates" menuText="Check for Updates" commandName="cmdidCheckUpdates" toolTipText="Check for Updates" mod1="0" mod2="0" visibilityConstraints="0" commandFlags="0" sampleData="false" />
           </commandTableHasButtons>
           <commandTableHasButtons Id="302690b6-77a6-4149-a0a8-47c4095e06a7">
-            <button Id="4d7221ee-5ab8-4496-ae7d-220c0a1b7280" name="Reinstall" idNumeric="10" buttonText="Reinstall" menuText="Reinstall" commandName="cmdidReinstall" toolTipText="Reinstall" mod1="0" mod2="0" visibilityConstraints="0" commandFlags="0" sampleData="false" />
+            <button Id="4d7221ee-5ab8-4496-ae7d-220c0a1b7280" name="Reinstall" idNumeric="10" buttonText="Reinstall" menuText="Reinstall" commandName="cmdidReinstall" toolTipText="Reinstall" mod1="0" mod2="0" visibilityConstraints="0" commandFlags="DefaultInvisible, DynamicVisibility" sampleData="false" />
           </commandTableHasButtons>
           <commandTableHasButtons Id="c13c0bcf-e00d-4677-9a3f-098610424bf4">
-            <button Id="3eb3b515-172c-43b0-ad2a-4aad131d0c21" name="Uninstall" idNumeric="11" buttonText="Uninstall" menuText="Uninstall" commandName="cmdidUninstall" toolTipText="Uninstall" mod1="0" mod2="0" visibilityConstraints="0" commandFlags="0" sampleData="false" />
+            <button Id="3eb3b515-172c-43b0-ad2a-4aad131d0c21" name="Uninstall" idNumeric="11" buttonText="Uninstall" menuText="Uninstall" commandName="cmdidUninstall" toolTipText="Uninstall" mod1="0" mod2="0" visibilityConstraints="0" icon="Uninstall.bmp" commandFlags="0" sampleData="false" />
           </commandTableHasButtons>
         </buttons>
       </commandTable>

@@ -1,4 +1,4 @@
-﻿namespace ClariusLabs.NuGet.Toolkit
+﻿namespace ClariusLabs.NuGetToolkit
 {
     using Microsoft.VisualStudio.Shell.Interop;
     using System;
@@ -13,9 +13,10 @@
 
     public class GraphIcons
     {
-        internal const string Packages = Id.PrefixDot + "Packages";
-        internal const string Package = Id.PrefixDot + "Package";
-        internal const string PackagesConfig = Id.PrefixDot + "PackagesConfig";
+        public const string Packages = Id.PrefixDot + "Packages";
+        public const string Package = Id.PrefixDot + "Package";
+        public const string PackagesConfig = Id.PrefixDot + "PackagesConfig";
+        public const string PackageUpdate = Id.PrefixDot + "PackageUpdate";
 
         private IServiceProvider serviceProvider;
 
@@ -30,6 +31,7 @@
             RegisterIcon(Packages, "nuget.png");
             RegisterIcon(Package, "package.ico");
             RegisterIcon(PackagesConfig, "config.ico");
+            RegisterIcon(PackageUpdate, "update.ico");
         }
 
         private void RegisterIcon(string imageName, string resourceName)

@@ -1,4 +1,4 @@
-﻿namespace ClariusLabs.NuGet.Toolkit
+﻿namespace ClariusLabs.NuGetToolkit
 {
     using System;
     using System.ComponentModel.Composition;

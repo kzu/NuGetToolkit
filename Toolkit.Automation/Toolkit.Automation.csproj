@@ -7,8 +7,8 @@
     <ProjectGuid>{2BE755A5-0F42-42F6-A599-E56461415101}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ClariusLabs.NuGet.Toolkit</RootNamespace>
-    <AssemblyName>ClariusLabs.NuGet.Toolkit.Automation</AssemblyName>
+    <RootNamespace>ClariusLabs.NuGetToolkit</RootNamespace>
+    <AssemblyName>ClariusLabs.NuGetToolkit.Automation</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <GeneratePkgDefFile>false</GeneratePkgDefFile>
@@ -159,11 +159,13 @@
       <SourceModelReference>modelbus://NuPattern.Runtime.Store/Toolkit/Product/D:\Code\github.com\NuGetToolkit\Toolkit.slnbldr%252f10e6778a-50fa-48a9-b186-9e310676d27b</SourceModelReference>
       <ItemGuid>9438f9c7-603a-4f33-afce-25c73bb95d39</ItemGuid>
     </Compile>
+    <Compile Include="IPackageManagerConsole.cs" />
     <Compile Include="IShellPackage.cs" />
     <Compile Include="netfx\System\Dynamic\DynamicReflection.cs" />
     <Compile Include="netfx\System\Dynamic\OutValue.cs" />
     <Compile Include="netfx\System\Dynamic\RefValue.cs" />
     <Compile Include="netfx\System\Dynamic\TypeParameter.cs" />
+    <Compile Include="PackageManagerConsole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SelectionService.cs" />
     <Compile Include="ShellExport.cs" />
@@ -175,6 +177,7 @@
     <Compile Include="SolutionExplorer\SolutionExtensions.cs" />
     <Compile Include="SolutionExplorer\ReferencesGraphProvider.cs" />
     <Compile Include="SolutionExplorer\ReferencesGraphSchema.cs" />
+    <Compile Include="VsToolWindow.cs" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4df5-91F0-309BEEBAD82D}" />
@@ -204,6 +207,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\config.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\update.ico" />
   </ItemGroup>
   <!-- Properties for Toolkit Targets -->
   <PropertyGroup>

@@ -18,7 +18,7 @@
 */
 #endregion
 
-namespace ClariusLabs.NuGet.Toolkit
+namespace ClariusLabs.NuGetToolkit
 {
     static partial class CommandIds
     {

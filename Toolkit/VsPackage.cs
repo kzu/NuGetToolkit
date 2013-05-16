@@ -1,4 +1,4 @@
-﻿namespace ClariusLabs.NuGet.Toolkit
+﻿namespace ClariusLabs.NuGetToolkit
 {
     using System;
     using Microsoft.VisualStudio.Shell;
@@ -40,5 +40,6 @@ using System.ComponentModel.Composition;
         }
 
         public IDevEnv DevEnv { get; private set; }
+        public ISelectedGraphNode SelectedNode { get; set; }
     }
 }

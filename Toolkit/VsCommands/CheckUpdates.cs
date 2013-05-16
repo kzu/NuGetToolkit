@@ -1,4 +1,4 @@
-﻿namespace ClariusLabs.NuGet.Toolkit.Commands
+﻿namespace ClariusLabs.NuGetToolkit.VsCommands
 {
     using System;
     using System.Diagnostics;

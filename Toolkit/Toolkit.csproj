@@ -22,10 +22,11 @@
     <ProjectGuid>{1596DF55-695B-4B8A-AB47-6154B086CA9F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ClariusLabs.NuGet.Toolkit</RootNamespace>
-    <AssemblyName>ClariusLabs.NuGet.Toolkit</AssemblyName>
+    <RootNamespace>ClariusLabs.NuGetToolkit</RootNamespace>
+    <AssemblyName>ClariusLabs.NuGetToolkit</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <CreateVsixContainer Condition=" '$(Configuration)' == 'Debug' ">false</CreateVsixContainer>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -70,6 +71,12 @@
     <Reference Include="Microsoft.VisualStudio.Shell.Interop.9.0, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="Microsoft.VisualStudio.Shell.Immutable.10.0" />
     <Reference Include="Microsoft.VisualStudio.Shell.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="NuGet.VisualStudio, Version=2.5.40416.9020, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\packages\NuGet.VisualStudio.2.5.0\lib\net40\NuGet.VisualStudio.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.ComponentModel.Composition" />
@@ -104,10 +111,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Commands\CheckUpdates.cs" />
-    <Compile Include="Commands\Uninstall.cs" />
-    <Compile Include="Commands\Reinstall.cs" />
-    <Compile Include="Commands\Update.cs" />
+    <Compile Include="VsCommands\CheckUpdates.cs" />
+    <Compile Include="VsCommands\Uninstall.cs" />
+    <Compile Include="VsCommands\Reinstall.cs" />
+    <Compile Include="VsCommands\Update.cs" />
     <Compile Include="GeneratedCode\AssemblyInfo.cs">
       <DependentUpon>AssemblyInfo.tt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -152,6 +159,9 @@
       <FixedLink>
       </FixedLink>
     </Content>
+    <Content Include="Button Bitmaps\CheckUpdates.bmp" />
+    <Content Include="Button Bitmaps\CheckUpdates.ico" />
+    <Resource Include="Button Bitmaps\Uninstall.ico" />
     <VSCTCompile Include="GeneratedCode\CommandTable.vsct">
       <ResourceName>1000</ResourceName>
       <AutoGen>True</AutoGen>

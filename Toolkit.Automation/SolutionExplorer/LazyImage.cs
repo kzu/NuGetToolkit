@@ -1,4 +1,4 @@
-﻿namespace ClariusLabs.NuGet.Toolkit
+﻿namespace ClariusLabs.NuGetToolkit
 {
     using Microsoft.Internal.VisualStudio.PlatformUI;
     using Microsoft.VisualStudio.Shell.Interop;
