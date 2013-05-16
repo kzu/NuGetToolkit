@@ -6,11 +6,11 @@
     internal static class Id
     {
         public const string Prefix = "ClariusLabs.NuGet.Toolkit";
-        private const string prefixDot = Prefix + ".";
+        public const string PrefixDot = Prefix + ".";
 
         public static string For(string name)
         {
-            return prefixDot + name;
+            return PrefixDot + name;
         }
     }
 }

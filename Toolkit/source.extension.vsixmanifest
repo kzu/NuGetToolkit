@@ -22,11 +22,13 @@
             <Name>NuPattern Toolkit Manager</Name>
             <VsixPath>NuPatternToolkitManager.vsix</VsixPath>
         </Reference>
+        <Reference Id="Microsoft.VisualStudio.MPF" MinVersion="10.0">
+            <Name>Visual Studio MPF</Name>
+        </Reference>
     </References>
     <Content>
         <VsPackage>|%CurrentProject%;PkgdefProjectOutputGroup|</VsPackage>
         <CustomExtension Type="ClideComponent">|%CurrentProject%|</CustomExtension>
-        <MefComponent>|%CurrentProject%|</MefComponent>
         <MefComponent>|Toolkit.Automation|</MefComponent>
         <CustomExtension Type="NuPattern.Toolkit.PatternModel" AssemblyFile="ClariusLabs.NuGet.Toolkit.dll">ClariusLabs.NuGet.Toolkit.PatternModel.patterndefinition</CustomExtension>
         <ItemTemplate>Assets\Templates\Items</ItemTemplate>

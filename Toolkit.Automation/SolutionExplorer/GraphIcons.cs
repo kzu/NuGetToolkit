@@ -1,20 +1,21 @@
-﻿using Microsoft.VisualStudio.Shell.Interop;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Threading;
-using Microsoft.Internal.VisualStudio.PlatformUI;
-
-namespace ClariusLabs.NuGet.Toolkit
+﻿namespace ClariusLabs.NuGet.Toolkit
 {
+    using Microsoft.VisualStudio.Shell.Interop;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using System.Windows.Media;
+    using System.Windows.Media.Imaging;
+    using System.Windows.Threading;
+    using Microsoft.Internal.VisualStudio.PlatformUI;
+
     public class GraphIcons
     {
-        internal const string PackagesIcon = "ClariusLabs.NuGet.Toolkit.Packages";
-        internal const string PackageIcon = "ClariusLabs.NuGet.Toolkit.Package";
+        internal const string Packages = Id.PrefixDot + "Packages";
+        internal const string Package = Id.PrefixDot + "Package";
+        internal const string PackagesConfig = Id.PrefixDot + "PackagesConfig";
 
         private IServiceProvider serviceProvider;
 
@@ -26,8 +27,9 @@ namespace ClariusLabs.NuGet.Toolkit
 
         public void Initialize()
         {
-            RegisterIcon(PackagesIcon, "nuget.png");
-            RegisterIcon(PackageIcon, "package.ico");
+            RegisterIcon(Packages, "nuget.png");
+            RegisterIcon(Package, "package.ico");
+            RegisterIcon(PackagesConfig, "config.ico");
         }
 
         private void RegisterIcon(string imageName, string resourceName)

@@ -7,13 +7,12 @@
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
-    using global::NuGet;
 
     internal static class GraphNodeExtensions
     {
         internal static bool IsRootNode(this GraphNode node)
         {
-            return node.IsPropertiesNode() || node.IsPackagesConfigNode();
+            return node.IsPropertiesNode() || node.IsConfigNode();
         }
 
         internal static bool IsPropertiesNode(this GraphNode node)
@@ -21,14 +20,9 @@
             return node.HasCategory("ProjectFolder") && node.Label == "Properties";
         }
 
-        internal static bool IsPackagesConfigNode(this GraphNode node)
+        internal static bool IsConfigNode(this GraphNode node)
         {
-            return node.HasCategory(CodeNodeCategories.ProjectItem) && node.Label == "packages.config";
-        }
-
-        internal static bool IsPackagesNode(this GraphNode node)
-        {
-            return node.HasCategory(ReferencesGraphSchema.PackagesCategory);
+            return node.HasCategory(CodeNodeCategories.ProjectItem) && node.Label == global::NuGet.Constants.PackageReferenceFile;
         }
 
         internal static bool IsPackageNode(this GraphNode node)
