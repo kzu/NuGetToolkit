@@ -170,6 +170,7 @@
     </VSCTCompile>
     <Resource Include="Resources\nuget.png" />
     <Resource Include="Resources\package.ico" />
+    <Content Include="Button Bitmaps\Uninstall.bmp" />
     <Content Include="Resources\Pattern.ico" />
     <Content Include="Resources\Toolkit.ico" />
     <Content Include="Resources\ToolkitIcon.png">

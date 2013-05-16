@@ -35,17 +35,25 @@
         private IShellPackage package;
         private IVsPackageManagerFactory managerFactory;
         private IVsPackageInstallerServices packageInstaller;
+        private IVsPackageInstallerEvents installerEvents;
         private SelectionService selectionService;
         private ConcurrentQueue<IItemNode> searchItems;
 
         private List<IGraphContext> trackingContext = new List<IGraphContext>();
 
         [ImportingConstructor]
-        public ReferencesGraphProvider(IShellPackage package, IVsPackageManagerFactory managerFactory, IVsPackageInstallerServices packageInstaller)
+        public ReferencesGraphProvider(IShellPackage package, IVsPackageManagerFactory managerFactory,
+            IVsPackageInstallerServices packageInstaller,
+            IVsPackageInstallerEvents installerEvents)
         {
             this.package = package;
             this.managerFactory = managerFactory;
             this.packageInstaller = packageInstaller;
+            this.installerEvents = installerEvents;
+
+            installerEvents.PackageReferenceAdded += e => System.Threading.Tasks.Task.Run(() => InvalidatePackageAdded(e));
+            installerEvents.PackageReferenceRemoved += e => System.Threading.Tasks.Task.Run(() => InvalidatePackageRemoved(e));
+
             this.icons = new GraphIcons(package);
             icons.Initialize();
 
@@ -104,12 +112,57 @@
             context.OnCompleted();
         }
 
+        private void InvalidatePackageAdded(IVsPackageMetadata metadata)
+        {
+            // Give the package manager some time to finish.
+            System.Threading.Thread.Sleep(100);
+
+            // TODO: we are not getting the project to which the package 
+            // was added, so we need to refresh all contexts :(
+            foreach (var context in this.trackingContext.ToList())
+            {
+                this.BeginGetGraphData(context);
+                // If there was a pending search, restarts it.
+                StartSearch(context);
+            }
+        }
+
+        private void InvalidatePackageRemoved(IVsPackageMetadata metadata)
+        {
+            // Give the package manager some time to finish.
+            System.Threading.Thread.Sleep(100);
+
+            foreach (var context in this.trackingContext.ToList())
+            {
+                using (var scope = new GraphTransactionScope())
+                {
+                    var toRemove = from node in context.OutputNodes
+                                   where node.HasCategory(ReferencesGraphSchema.PackageCategory)
+                                   let installed = node.GetValue<IVsPackageMetadata>(ReferencesGraphSchema.PackageProperty)
+                                   where installed != null && installed.Id == metadata.Id && installed.VersionString == metadata.VersionString
+                                   select node;
+
+                    foreach (var node in toRemove)
+                    {
+                        node.Remove();
+                    }
+
+                    scope.Complete();
+                }
+
+                this.BeginGetGraphData(context);
+                // If there was a pending search, restarts it.
+                StartSearch(context);
+            }
+        }
+
         private void TryAddPackageNodes(object state)
         {
             try
             {
                 var context = (IGraphContext)state;
                 AddPackageNodes(context, context.InputNodes.First());
+                TrackChanges(context);
             }
             catch (Exception e)
             {
@@ -175,16 +228,20 @@
             {
                 var parentId = parent.GetValue<GraphNodeId>("Id");
                 var nodeId = GraphNodeId.GetNested(parentId, GraphNodeId.GetPartial(CodeGraphNodeIdName.Member, package.Id));
-                var node = context.Graph.Nodes.GetOrCreate(nodeId, package.Id, ReferencesGraphSchema.PackageCategory);
+                var node = context.Graph.Nodes.Get(nodeId);
+                if (node == null)
+                {
+                    node = context.Graph.Nodes.GetOrCreate(nodeId, package.Id, ReferencesGraphSchema.PackageCategory);
 
-                node.SetValue<string>(DgmlNodeProperties.Icon, GraphIcons.Package);
-                node.SetValue<IVsPackageMetadata>(ReferencesGraphSchema.PackageProperty, package);
+                    node.SetValue<string>(DgmlNodeProperties.Icon, GraphIcons.Package);
+                    node.SetValue<IVsPackageMetadata>(ReferencesGraphSchema.PackageProperty, package);
 
-                // Establish the relationship with the parent node.
-                context.Graph.Links.GetOrCreate(parent, node, "Packages", GraphCommonSchema.Contains);
+                    // Establish the relationship with the parent node.
+                    context.Graph.Links.GetOrCreate(parent, node, "Packages", GraphCommonSchema.Contains);
 
-                context.OutputNodes.Add(node);
-                scope.Complete();
+                    context.OutputNodes.Add(node);
+                    scope.Complete();
+                }
 
                 return node;
             }
@@ -202,7 +259,7 @@
 
         private void TrackChanges(IGraphContext context)
         {
-            if (context.TrackChanges && !this.trackingContext.Contains(context))
+            if (!this.trackingContext.Contains(context))
             {
                 context.Canceled += OnContextCanceled;
                 this.trackingContext.Add(context);
@@ -236,6 +293,7 @@
                     searchItems.Enqueue(item);
                 }
 
+                // TrackChanges(context);
                 Application.Current.Dispatcher.BeginInvoke(new SearchHandler(SearchNextItem), term, context);
             }
         }
@@ -266,7 +324,6 @@
                 context.OnCompleted();
             }
         }
-
 
         public IEnumerable<GraphCommand> GetCommands(IEnumerable<GraphNode> nodes)
         {
